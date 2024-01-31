@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
-import axios from 'axios';
+import axios from "axios";
 
 const Movie = (props) => {
   const { addToFavorites } = props;
 
-  const [movie, setMovie] = useState('');
+  const [movie, setMovie] = useState("");
 
   const { id } = useParams();
 
