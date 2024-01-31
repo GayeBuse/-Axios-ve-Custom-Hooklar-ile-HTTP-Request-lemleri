@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import axios from 'axios';
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import axios from "axios";
 
 const AddMovieForm = () => {
   const history = useHistory();
 
   const [movie, setMovie] = useState({
-    title: '',
-    director: '',
-    genre: '',
+    title: "",
+    director: "",
+    genre: "",
     metascore: 0,
-    description: '',
+    description: "",
   });
 
   const handleChange = (e) => {
@@ -23,12 +23,12 @@ const AddMovieForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post('https://nextgen-project.onrender.com/api/s11d3/movies', movie)
+      .post("https://nextgen-project.onrender.com/api/s11d3/movies", movie)
       .then((response) => {
-        history.push('/movies');
+        history.push("/movies");
       })
       .catch((error) => {
-        console.error('Error adding movie:', error);
+        console.error("Error adding movie:", error);
       });
   };
 
